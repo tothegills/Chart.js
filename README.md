@@ -3,12 +3,12 @@
 *Simple HTML5 Charts using the canvas element* [chartjs.org](http://www.chartjs.org)
 
 ##New Features In This Fork
- - labelsFilter to filter x-axis labels based on user provided function
- - Template interpolator can be changed from default `<%` `%>` to what ever you want
- - New chart - overlay chart - for combing both bar and line charts on the same chart
- - new chart options for pie and dougnut to allow the creation of semi circle (or any size) charts drawn at user defined starting angle ()
- - line and overlay charts can handle sparse datasets, just include null in the dataset where no data is avaliable, this can be seen in the samples.
- - line,bar and overlay charts can have the tooltip display finely tuned. For each dataset an option called showTooltip can be passed to turn off the displaying off tooltips for that one dataset but not the whole chart
+ - labelsFilter to filter x-axis labels based on user provided function [http://jsfiddle.net/leighking2/mea767ss](http://jsfiddle.net/leighking2/mea767ss/)
+ - Template interpolator can be changed from default `<%` `%>` to what ever you want [http://jsfiddle.net/leighking2/d5yq9x32](http://fiddle.jshell.net/leighking2/d5yq9x32/)
+ - New chart - overlay chart - for combing both bar and line charts on the same chart [http://jsfiddle.net/leighking2/y58n7m3z](http://fiddle.jshell.net/leighking2/y58n7m3z/)
+ - new chart options for pie and dougnut to allow the creation of semi circle (or any size) charts drawn at user defined starting angle [http://jsfiddle.net/leighking2/f62Lghy1](http://fiddle.jshell.net/leighking2/f62Lghy1/)
+ - line and overlay charts can handle sparse datasets, just include null in the dataset where no data is avaliable, this can be seen in the samples [http://jsfiddle.net/leighking2/ntuwuk5v](http://fiddle.jshell.net/leighking2/ntuwuk5v/)
+ - line,bar and overlay charts can have the tooltip display finely tuned. For each dataset an option called showTooltip can be passed to turn off the displaying off tooltips for that one dataset but not the whole chart [http://jsfiddle.net/leighking2/at3w2aej](http://fiddle.jshell.net/leighking2/at3w2aej/)
  
 
 All new features are documented the forks docs section.
