@@ -89,6 +89,39 @@ You must also ensure you override the default templates making use of your new i
 
 This will also include providing legend tempaltes specifcally for any graph you wish to use the lengend for. Once this is done you can use chart.js as normal
 
+### External Tooltips
+
+You can enable custom tooltips in the global or chart configuration like so:
+
+```javascript
+var myPieChart = new Chart(ctx).Pie(data, {
+	customTooltips: function(tooltip) {
+
+        // tooltip will be false if tooltip is not visible or should be hidden
+        if (!tooltip) {
+            return;
+        }
+
+        // Otherwise, tooltip will be an object with all tooltip properties like:
+
+        // tooltip.caretHeight
+        // tooltip.caretPadding
+        // tooltip.chart
+        // tooltip.cornerRadius
+        // tooltip.fillColor
+        // tooltip.font...
+        // tooltip.text
+        // tooltip.x
+        // tooltip.y
+        // etc...
+
+    };
+});
+```
+
+See files `sample/pie-customTooltips.html` and `sample/line-customTooltips.html` for examples on how to get started.
+
+
 ### Writing new chart types
 
 Chart.js 1.0 has been rewritten to provide a platform for developers to create their own custom chart types, and be able to share and utilise them through the Chart.js API.
@@ -145,6 +178,7 @@ new Chart(ctx).LineAlt(data);
 ### Community extensions
 
 - <a href="https://github.com/Regaddi/Chart.StackedBar.js" target"_blank">Stacked Bar Chart</a> by <a href="https://twitter.com/Regaddi" target="_blank">@Regaddi</a>
+- <a href="https://github.com/CAYdenberg/Chart.js" target"_blank">Error bars (bar and line charts)</a> by <a href="https://twitter.com/CAYdenberg" target="_blank">@CAYdenberg</a>
 
 ### Creating custom builds
 
