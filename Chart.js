@@ -95,9 +95,9 @@
             // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
             maintainAspectRatio: true,
 
+            // Boolean - Determines whether to draw tooltips on the canvas or not - attaches events to touchmove & mousemove
+            showTooltips: true,
 
-			// Boolean - Determines whether to draw tooltips on the canvas or not - attaches events to touchmove & mousemove
-			showTooltips: true,
 
 			// Boolean - Determines whether to draw built-in tooltip or call custom tooltip function
 			customTooltips: false,
@@ -452,7 +452,9 @@
 			if(templateString instanceof Function){
 			 	return templateString(valuesObject);
 		 	}
-
+			var interpolators = Chart.defaults.global.templateInterpolators;
+            var cache = {};
+			
             function tmpl(str, data) {
                 // Figure out if we're getting a template, or if we need to
                 // load the template - and be sure to cache the result.
@@ -2268,6 +2270,23 @@
 				lineColor : this.options.scaleLineColor,
 				showHorizontalLines : this.options.scaleShowHorizontalLines,
 				showVerticalLines : this.options.scaleShowVerticalLines,
+				gridLineWidth : (this.options.scaleShowGridLines) ? this.options.scaleGridLineWidth : 0,
+				gridLineColor : (this.options.scaleShowGridLines) ? this.options.scaleGridLineColor : "rgba(0,0,0,0)",
+				padding : (this.options.showScale) ? 0 : (this.options.barShowStroke) ? this.options.barStrokeWidth : 0,
+				showLabels : this.options.scaleShowLabels,
+				display : this.options.showScale
+			};
+
+			if (this.options.scaleOverride){
+				helpers.extend(scaleOptions, {
+					calculateYRange: helpers.noop,
+					steps: this.options.scaleSteps,
+					stepValue: this.options.scaleStepWidth,
+					min: this.options.scaleStartValue,
+					max: this.options.scaleStartValue + (this.options.scaleSteps * this.options.scaleStepWidth)
+				});
+			}				
+				
 
             this.scale = new this.ScaleClass(scaleOptions);
         },
@@ -2938,6 +2957,7 @@
 
 
 }).call(this);
+
 (function() {
     "use strict";
 
